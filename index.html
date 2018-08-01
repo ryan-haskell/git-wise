@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Git Wise</title>
+</head>
+<body>
+  <button onclick="educateMe()">Educate me.</button>
+  <p id="phrase"></p>
+  <script>
+    var gitWise = (prefix, verb, noun, preposition, object) =>
+      [ prefix, verb, noun, preposition, object ].join(' ') + '.'
+    var data = {
+      prefixes: [ 'Always', 'Don\'t', 'You can\'t', 'Never', 'Let\'s not' ],
+      verbs: [ 'beat', 'eat', 'wash', 'chase', 'burn', 'take' ],
+      nouns: [ 'baby', 'dog', 'ourselves', 'potion', 'shower', 'ocean' ].map(noun => 'the ' + noun),
+      prepositions: [ 'around', 'without', 'inside', 'above', 'with' ],
+    }
+    var pickOne = (list) => list[parseInt(Math.random() * list.length)]
+    var educateMe = () => {
+      document.getElementById('phrase').innerHTML = gitWise(pickOne(data.prefixes),
+        pickOne(data.verbs),
+        pickOne(data.nouns),
+        pickOne(data.prepositions),
+        pickOne(data.nouns)
+      )
+    }
+  </script>
+</body>
+</html>
