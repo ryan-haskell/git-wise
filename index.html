@@ -13,9 +13,10 @@
       [ prefix, verb, noun, preposition, object ].join(' ') + '.'
     var data = {
       prefixes: [ 'Always', 'Don\'t', 'You can\'t', 'Never', 'Let\'s not', 'We shouldn\'t' ],
-      verbs: [ 'beat', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit' ],
+      verbs: [ 'boil', 'beat', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit', 'incinerate', 'drink' ],
       nouns: [
         ...[ 'ourselves', 'yourself' ],
+        // Nouns needing 'the ' prefix
         ...[ 'baby', 'dog', 'potion', 'shower', 'ocean', 'car', 'cat', 'bathwater', 'hotdog', 'garbage' ].map(noun => 'the ' + noun)
       ],
       prepositions: [ 'around', 'without', 'inside', 'above', 'with', 'under' ],
