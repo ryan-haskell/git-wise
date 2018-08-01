@@ -13,13 +13,13 @@
       [ prefix, verb, noun, preposition, object ].join(' ') + '.'
     var data = {
       prefixes: [ 'Always', 'Don\'t', 'You can\'t', 'Never', 'Let\'s not', 'We shouldn\'t', 'Let\'s' ],
-      verbs: [ 'boil', 'beat', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit', 'incinerate', 'drink', 'slap', 'smack', 'run', 'drown', 'send', 'kick', 'punch', 'follow' ],
+      verbs: [ 'boil', 'beat', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit', 'incinerate', 'drink', 'slap', 'smack', 'run', 'drown', 'send', 'kick', 'punch', 'follow', 'baste' ],
       nouns: [
         ...[ 'ourselves', 'yourself' ],
         // Nouns needing 'the ' prefix
-        ...[ 'baby', 'dog', 'potion', 'shower', 'ocean', 'car', 'cat', 'bathwater', 'hotdog', 'garbage', 'watermelon', 'furnace', 'hair', 'sink', 'kitchen', 'cooks', 'beaver', 'child' ].map(noun => 'the ' + noun)
+        ...[ 'baby', 'dog', 'potion', 'shower', 'ocean', 'car', 'cat', 'bathwater', 'hotdog', 'garbage', 'watermelon', 'furnace', 'cart', 'sink', 'kitchen', 'cooks', 'beaver', 'child', 'wheels', 'turkey' ].map(noun => 'the ' + noun)
       ],
-      prepositions: [ 'around', 'without', 'inside', 'above', 'with', 'under' ],
+      prepositions: [ 'around', 'without', 'inside', 'above', 'with', 'under', 'in front of', 'before', 'after', 'behind' ],
     }
     var pickOne = (list) => list[parseInt(Math.random() * list.length)]
     var educateMe = () => {
