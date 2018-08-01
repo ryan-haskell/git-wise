@@ -12,10 +12,10 @@
     var gitWise = (prefix, verb, noun, preposition, object) =>
       [ prefix, verb, noun, preposition, object ].join(' ') + '.'
     var data = {
-      prefixes: [ 'Always', 'Don\'t', 'You can\'t', 'Never', 'Let\'s not' ],
-      verbs: [ 'beat', 'eat', 'wash', 'chase', 'burn', 'take' ],
-      nouns: [ 'baby', 'dog', 'ourselves', 'potion', 'shower', 'ocean' ].map(noun => 'the ' + noun),
-      prepositions: [ 'around', 'without', 'inside', 'above', 'with' ],
+      prefixes: [ 'Always', 'Don\'t', 'You can\'t', 'Never', 'Let\'s not', 'We shouldn\'t' ],
+      verbs: [ 'beat', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit ],
+      nouns: [ 'baby', 'dog', 'ourselves', 'potion', 'shower', 'ocean', 'car', 'yourself', 'cat', 'catdog', 'hotdog', 'garbage' ].map(noun => 'the ' + noun),
+      prepositions: [ 'around', 'without', 'inside', 'above', 'with', 'under' ],
     }
     var pickOne = (list) => list[parseInt(Math.random() * list.length)]
     var educateMe = () => {
