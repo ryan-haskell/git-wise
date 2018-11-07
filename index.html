@@ -12,14 +12,14 @@
     var gitWise = (prefix, verb, noun, preposition, object) =>
       [ prefix, verb, noun, preposition, object ].join(' ') + '.'
     var data = {
-      prefixes: [ 'Always', 'Don\'t', 'You can\'t', 'Never', 'Let\'s not', 'We shouldn\'t', 'Let\'s' ],
-      verbs: [ 'boil', 'beat', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit', 'incinerate', 'drink', 'slap', 'smack', 'run', 'drown', 'send', 'kick', 'punch', 'follow', 'baste' ],
+      prefixes: [ 'Always', 'Don\'t', 'You can\'t', 'Never', 'Let\'s not', 'We shouldn\'t', 'Let\'s', 'You' ],
+      verbs: [ 'boil', 'beat', 'cross', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit', 'incinerate', 'drink', 'slap', 'smack', 'run', 'drown', 'send', 'kick', 'punch', 'follow', 'baste' ],
       nouns: [
-        ...[ 'ourselves', 'yourself' ],
+        ...[ 'ourselves', 'yourself', 'ghostbusters', 'streams' ],
         // Nouns needing 'the ' prefix
-        ...[ 'cactus', 'baby', 'dog', 'potion', 'shower', 'ocean', 'car', 'cat', 'bathwater', 'hotdog', 'garbage', 'watermelon', 'furnace', 'cart', 'sink', 'kitchen', 'cooks', 'beaver', 'child', 'wheels', 'turkey' ].map(noun => 'the ' + noun)
+        ...[ 'horse', 'barn', 'robot', 'cactus', 'baby', 'dog', 'potion', 'shower', 'ocean', 'car', 'cat', 'bathwater', 'hotdog', 'garbage', 'watermelon', 'furnace', 'cart', 'sink', 'kitchen', 'cooks', 'beaver', 'child', 'wheels', 'turkey' ].map(noun => 'the ' + noun)
       ],
-      prepositions: [ 'if it\'s still in', 'if you can\'t be', 'if it ain\'t with', 'around', 'without', 'inside', 'above', 'with', 'under', 'in front of', 'before', 'after', 'behind' ],
+      prepositions: [ 'if it\'s still in', 'if you can\'t be', 'if it ain\'t with', 'out of',  'that builds', 'around', 'without', 'inside', 'above', 'with', 'under', 'in front of', 'before', 'after', 'behind' ],
     }
     var pickOne = (list) => list[parseInt(Math.random() * list.length)]
     var educateMe = () => {
