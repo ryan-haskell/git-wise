@@ -9,24 +9,27 @@
   <button onclick="educateMe()">Educate me.</button>
   <p id="phrase"></p>
   <script>
+    var maybe = (probability, phrase) =>
+      (Math.random() < probability) ? phrase : ''
     var gitWise = (prefix, verb, noun, preposition, object) =>
-      [ prefix, verb, noun, preposition, object ].join(' ') + '.'
+      [ maybe(0.10, 'Quote unquote:'), prefix, verb, noun, preposition, object ].join(' ') + '.'
     var tryBeingAngry = (noun) => {
         return (Math.floor(Math.random() * 5) + 1) === 1 ? 'damn ' + noun : noun
     }
     var data = {
       prefixes: [ 'Always', 'Don\'t', 'You can\'t', 'Never', 'You can never', 'You better', 'Let\'s not', 'We shouldn\'t', 'Let\'s', 'You' ],
-      verbs: [ 'play', 'whack', 'boil', 'beat', 'bury', 'jump' 'cross', 'rub', 'drown', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit', 'incinerate', 'drink', 'slap', 'smack', 'run', 'drown', 'send', 'kick', 'punch', 'follow', 'baste' ],
+      verbs: [ 'play', 'come out of', 'whack', 'boil', 'beat', 'bury', 'jump' 'cross', 'rub', 'drown', 'eat', 'wash', 'chase', 'burn', 'take', 'throw out', 'hit', 'incinerate', 'drink', 'slap', 'smack', 'run', 'drown', 'send', 'kick', 'punch', 'follow', 'baste' ],
       nouns: [
         ...[ 'ourselves', 'yourself', 'ghostbusters', 'streams' ],
         // Nouns needing 'the ' prefix
-        ...[ 'mole', 'trash', 'horse', 'forest', 'barn', 'robot', 'cactus', 'baby', 'dog', 'potion', 'shower', 'ocean', 'car', 'cat', 'bathwater', 'hotdog', 'garbage', 'watermelon', 'furnace', 'cart', 'sink', 'kitchen', 'cooks', 'beaver', 'child', 'wheels', 'turkey' ].map(noun => 'the ' + tryBeingAngry(noun))
+        ...[ 'pony', 'thread', 'sweater', 'mole', 'trash', 'horse', 'forest', 'barn', 'robot', 'cactus', 'baby', 'dog', 'potion', 'shower', 'ocean', 'car', 'cat', 'bathwater', 'hotdog', 'garbage', 'watermelon', 'furnace', 'cart', 'sink', 'kitchen', 'cooks', 'beaver', 'child', 'wheels', 'turkey' ].map(noun => 'the ' + tryBeingAngry(noun))
       ],
       prepositions: [ 'if it\'s still in', 'if you can\'t be', 'if it ain\'t with', 'out of',  'that builds', 'around', 'without', 'inside', 'above', 'with', 'under', 'in front of', 'before', 'after', 'behind' ],
     }
     var pickOne = (list) => list[parseInt(Math.random() * list.length)]
     var educateMe = () => {
-      document.getElementById('phrase').innerHTML = gitWise(pickOne(data.prefixes),
+      document.getElementById('phrase').innerHTML = gitWise(
+        pickOne(data.prefixes),
         pickOne(data.verbs),
         pickOne(data.nouns),
         pickOne(data.prepositions),
